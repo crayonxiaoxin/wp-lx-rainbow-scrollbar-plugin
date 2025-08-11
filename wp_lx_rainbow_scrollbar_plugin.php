@@ -12,7 +12,7 @@
 
 function lx_enqueue_rainbow_assets()
 {
-    wp_enqueue_style('lx-rainbow-style', plugin_dir_url(__FILE__) . 'assets/rainbow-scrollbar.css', [], '1.0.0');
+    wp_enqueue_style('lx-rainbow-style', plugin_dir_url(__FILE__) . 'assets/rainbow-scrollbar.css', [], '1.0.5');
     wp_enqueue_script('lx-rainbow-script', plugin_dir_url(__FILE__) . 'assets/rainbow-scrollbar.js', [], '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'lx_enqueue_rainbow_assets');
