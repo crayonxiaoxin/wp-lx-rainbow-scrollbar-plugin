@@ -1,0 +1,50 @@
+.lx-rainbow-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: transparent;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.lx-rainbow-indicator {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(270deg,
+            #ff0000, #ff2000, #ff4000, #ff6000, #ff8000, #ffa000, #ffbf00,
+            #ffff00, #dfff00, #bfff00, #9fff00, #80ff00, #60ff00, #40ff00,
+            #20ff00, #00ff00, #00ff20, #00ff40, #00ff60, #00ff80, #00ffa0,
+            #00ffbf, #00ffff, #00dfff, #00bfff, #009fff, #0080ff, #0060ff,
+            #0040ff, #0020ff, #0000ff, #2000ff, #4000ff, #6000ff, #8000ff,
+            #a000ff, #bf00ff, #df00ff, #ff00ff, #ff00df, #ff00bf, #ff009f,
+            #ff0080, #ff0060, #ff0040, #ff0020, #ff0000);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    animation: lxRainbowFlow 4s linear infinite, hueShift 20s linear infinite;
+    transition: width 0.1s ease-out;
+    will-change: background-position;
+}
+
+@keyframes lxRainbowFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes hueShift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
